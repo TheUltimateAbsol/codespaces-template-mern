@@ -1,11 +1,8 @@
 {
   "name": "MERN Stack Development",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "image": "ghcr.io/devcontainers/templates/javascript-node-mongo:4.0.2",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/mongodb:1": {
-      "version": "7"
-    },
     "ghcr.io/devcontainers/features/redis:1": {},
     "ghcr.io/devcontainers/features/mysql:1": {
       "version": "8.0",
