@@ -1,12 +1,16 @@
 {
-  "name": "MERN Stack with Redis and MySQL Development",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspace",
+  "name": "MERN Stack Development",
+  "image": "ghcr.io/devcontainers/templates/javascript-node-mongo:4.0.2",
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/redis:1": {},
+    "ghcr.io/devcontainers/features/mysql:1": {
+      "version": "8.0",
+      "mysqlDatabase": "mern_db",
+      "mysqlUser": "root",
+      "mysqlPassword": "password"
+    }
   },
-  
   "customizations": {
     "vscode": {
       "settings": {
@@ -31,7 +35,17 @@
       ]
     }
   },
-  
+  "containerEnv": {
+    "NODE_ENV": "development",
+    "MONGO_URI": "mongodb://localhost:27017/mern_app",
+    "REDIS_URI": "redis://localhost:6379",
+    "MONGODB_HOST": "localhost",
+    "REDIS_HOST": "localhost",
+    "MYSQL_HOST": "localhost",
+    "MYSQL_USER": "root",
+    "MYSQL_PASSWORD": "password",
+    "MYSQL_DATABASE": "mern_db"
+  },
   "forwardPorts": [3000, 5000, 27017, 6379, 3306],
   "remoteUser": "node"
 }
